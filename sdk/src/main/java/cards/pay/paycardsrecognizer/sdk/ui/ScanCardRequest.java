@@ -4,7 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.RestrictTo;
 
-@RestrictTo(RestrictTo.Scope.LIBRARY)
 public final class ScanCardRequest implements Parcelable {
 
     public static final boolean DEFAULT_ENABLE_SOUND = true;

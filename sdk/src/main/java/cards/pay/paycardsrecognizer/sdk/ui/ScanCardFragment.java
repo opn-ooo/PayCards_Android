@@ -38,7 +38,6 @@ import static cards.pay.paycardsrecognizer.sdk.ndk.RecognitionConstants.RECOGNIZ
 import static cards.pay.paycardsrecognizer.sdk.ndk.RecognitionConstants.RECOGNIZER_MODE_NAME;
 import static cards.pay.paycardsrecognizer.sdk.ndk.RecognitionConstants.RECOGNIZER_MODE_NUMBER;
 
-@RestrictTo(RestrictTo.Scope.LIBRARY)
 public class ScanCardFragment extends Fragment {
     @SuppressWarnings("unused")
     public static final String TAG = "ScanCardFragment";
@@ -246,7 +245,7 @@ public class ScanCardFragment extends Fragment {
         }
     }
 
-    private void initView(View view) {
+    void initView(View view) {
         view.findViewById(R.id.wocr_tv_enter_card_number_id).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
@@ -264,12 +263,6 @@ public class ScanCardFragment extends Fragment {
                 }
             });
         }
-
-        TextView paycardsLink = (TextView)view.findViewById(R.id.wocr_powered_by_paycards_link);
-        SpannableString link = new SpannableString(getText(R.string.wocr_powered_by_pay_cards));
-        link.setSpan(new URLSpan(Constants.PAYCARDS_URL), 0, link.length(), SpannableString.SPAN_INCLUSIVE_EXCLUSIVE);
-        paycardsLink.setText(link);
-        paycardsLink.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     private void showMainContent() {

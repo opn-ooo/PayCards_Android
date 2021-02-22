@@ -6,22 +6,38 @@ See live demo: [pay.cards](https://play.google.com/store/apps/details?id=cards.p
 
 ### Installation
 
-* Add Maven URL for the pay.cards repository to your project `build.gradle` file.
+Create a new file in the root directory of the project named ```github.properties```.
 
-    ```gradle
-    repositories {
-         maven { url "http://pay.cards/maven" }
+```
+gpr.usr = omiselabs
+gpr.key = SPECIFY_YOUR_TOKEN_HERE_WITH_READ_PACKAGES_PERMISSION
+```
+
+Then in module ```build.gradle``` file, add the following,
+
+```
+def githubProperties = new Properties()
+githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
+repositories {
+    maven {
+        name = "GitHubPackages"
+        url = uri("https://maven.pkg.github.com/opn-ooo/PayCards_Android")
+        credentials {
+            username = githubProperties['gpr.usr'] ?: System.getenv("GPR_USER")
+            password = githubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
+        }
     }
-    ```
+}
+```
 
+Then inside ```dependencies``` block add,
 
-* Add the dependency
-
-    ```gradle
-    dependencies {
-        implementation 'cards.pay:paycardsrecognizer:1.1.0'
-    }
-    ```
+```
+dependencies {
+    ...
+    implementation "ooo.opn:paycards-android:1.0.0"
+}
+```
 
 ### Usage
 
