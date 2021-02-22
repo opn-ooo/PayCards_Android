@@ -81,7 +81,7 @@ publishing {
         bar(MavenPublication) {
             groupId 'ooo.opn'
             artifactId 'paycards-android'
-            version '1.0.0'
+            version '1.0.1'
             artifact("$buildDir/outputs/aar/sdk-release.aar")
 
             pom.withXml {

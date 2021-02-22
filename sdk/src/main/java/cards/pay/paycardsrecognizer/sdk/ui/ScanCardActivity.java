@@ -106,7 +106,7 @@ public class ScanCardActivity extends AppCompatActivity implements ScanCardFragm
         showScanCard();
     }
 
-    ScanCardRequest getScanRequest() {
+    public ScanCardRequest getScanRequest() {
         ScanCardRequest request = getIntent().getParcelableExtra(ScanCardIntent.KEY_SCAN_CARD_REQUEST);
         if (request == null) {
             request = ScanCardRequest.getDefault();
