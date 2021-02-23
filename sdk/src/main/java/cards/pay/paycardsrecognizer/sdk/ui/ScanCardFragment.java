@@ -58,7 +58,7 @@ public class ScanCardFragment extends Fragment {
 
     private int mCapturedSoundId = -1;
 
-    private InteractionListener mListener;
+    protected InteractionListener mListener;
 
     private ScanCardRequest mRequest;
 
