@@ -45,7 +45,7 @@ public class ScanCardActivity extends AppCompatActivity implements ScanCardFragm
         }
     }
 
-    void showInitLibrary() {
+    public void showInitLibrary() {
         Fragment fragment = new InitLibraryFragment();
         getSupportFragmentManager().beginTransaction()
                 .replace(android.R.id.content, fragment, InitLibraryFragment.TAG)
@@ -53,7 +53,7 @@ public class ScanCardActivity extends AppCompatActivity implements ScanCardFragm
                 .commitNow();
     }
 
-    void showScanCard() {
+    public void showScanCard() {
         Fragment fragment = new ScanCardFragment();
         Bundle args = new Bundle(1);
         args.putParcelable(ScanCardIntent.KEY_SCAN_CARD_REQUEST, getScanRequest());

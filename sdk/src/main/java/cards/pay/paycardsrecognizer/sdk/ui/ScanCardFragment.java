@@ -245,7 +245,7 @@ public class ScanCardFragment extends Fragment {
         }
     }
 
-    void initView(View view) {
+    public void initView(View view) {
         view.findViewById(R.id.wocr_tv_enter_card_number_id).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
